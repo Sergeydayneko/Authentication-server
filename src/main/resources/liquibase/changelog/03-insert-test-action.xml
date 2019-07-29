@@ -1,0 +1,42 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet author="dayneko_si" id="7">
+        <insert tableName="actions" schemaName="auth">
+            <column name="name" value="testAdminActions"/>
+            <column name="group" value="testActions"/>
+            <column name="url" value="http://allDspUrls"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="dayneko_si" id="8">
+        <insert tableName="roles" schemaName="auth">
+            <column name="name" value="testAdmin" />
+        </insert>
+    </changeSet>
+
+    <changeSet author="dayneko_si" id="9">
+        <insert tableName="permissions" schemaName="auth">
+            <column name="id_action" value="1"/>
+            <column name="id_role" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="dayneko_si" id="10">
+        <insert tableName="user_info">
+            <column name="fio" value="sergeyDayneko"/>
+            <column name="login" value="sdayneko"/>
+            <column name="password" value="123"/>
+            <column name="mail" value="sergeydayneko@mail.ru"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="dayneko_si" id="11">
+        <insert tableName="user_role" schemaName="auth">
+            <column name="id_user" value="1"/>
+            <column name="id_role" value="1"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

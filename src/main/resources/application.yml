@@ -1,0 +1,50 @@
+logging:
+    level: info
+    level.org.hibernate.SQL: debug
+    level.org.hibernate.type.descriptor.sql: trace
+security:
+    jwt:
+        header: X-Authorization
+        prefix: Bearer
+        raw-token-expiration: 86400
+        refresh-token-expiration: 2592000
+        secret: secret(changeToMacHash)
+        uri: /login
+server:
+    authentication:
+        url:
+            api-entry-point: /v1
+            base-auth-url: /**
+            login-entry-point: /login
+            refresh-token-entry-point: /v1/refresh
+            raw-access-token-entry-point: /v1/token
+            jwt-header: X-Authorization
+            jwt-request-type: header
+            swagger-entry-point: /swagger-ui.html
+            swagger-resources: /swagger-resources/**
+            swagger-api-docs: /v2/**
+            swagger-jars: /webjars/springfox-swagger-ui/**
+            swagger-controller: /v1/swagger
+
+    connection-timeout: 10000
+    port: 8096
+    servlet:
+        context-path: /ws-dsp
+    tomcat:
+        max-connections: 1000
+        max-threads: 200
+spring:
+    application:
+        name: auth-proxy-dsp
+    datasource:
+        hikari:
+            maximum-pool-size: 50
+            minimum-idle: 5
+    jpa:
+        properties:
+            hibernate:
+                default_schema: auth
+                format_sql: true
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
