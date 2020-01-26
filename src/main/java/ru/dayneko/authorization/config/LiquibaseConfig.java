@@ -1,34 +1,37 @@
 package ru.dayneko.authorization.config;
 
 import liquibase.integration.spring.SpringLiquibase;
+import lombok.RequiredArgsConstructor;
 import lombok.val;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-/**
- * Настройки подключения к Liquibase
- *
- * @author dayneko_si
- * @since 24.04.2019
- */
 @Configuration
+@RequiredArgsConstructor
 public class LiquibaseConfig {
-    private DataSource dataSource;
+    private final DataSource dataSource;
 
-    public LiquibaseConfig(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+    @Value("${liquibase.changelog}")
+    private String changeLog;
+
+    @Value("${liquibase.defaultSchema}")
+    private String defaultSchema;
+
+    @Value("${liquibase.liquibaseSchema}")
+    private String liquibaseSchema;
+
 
     @Bean
     public SpringLiquibase liquibase() {
         val liquibase = new SpringLiquibase();
-        liquibase.setChangeLog("classpath:/liquibase/liquibase-changelog.xml");
+        liquibase.setChangeLog(changeLog);
         liquibase.setDataSource(dataSource);
-        liquibase.setDefaultSchema("auth");
+        liquibase.setDefaultSchema(defaultSchema);
         liquibase.setDropFirst(false);
-        liquibase.setLiquibaseSchema("auth");
+        liquibase.setLiquibaseSchema(liquibaseSchema);
 
         return liquibase;
     }

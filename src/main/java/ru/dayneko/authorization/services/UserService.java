@@ -3,7 +3,7 @@ package ru.dayneko.authorization.services;
 import ru.dayneko.authorization.exceptions.UserCredentialsAreNotValid;
 import ru.dayneko.authorization.exceptions.UserNotFoundInDatabaseException;
 import ru.dayneko.authorization.model.dto.UserDtoWithRoleNames;
-import ru.dayneko.authorization.model.entity.user.User;
+import ru.dayneko.authorization.model.entity.User;
 
 import java.util.List;
 import java.util.Optional;

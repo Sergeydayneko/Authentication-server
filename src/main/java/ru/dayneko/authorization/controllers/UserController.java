@@ -2,7 +2,7 @@ package ru.dayneko.authorization.controllers;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.dayneko.authorization.model.dto.UserDtoDetailed;
@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * @since 08.05.2019
  */
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/v1")
 @Api(tags = "Контроллер для работы с пользователями системы авторизации")
 final public class UserController {

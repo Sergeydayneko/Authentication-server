@@ -1,6 +1,6 @@
 package ru.dayneko.authorization.services;
 
-import ru.dayneko.authorization.model.entity.user.Role;
+import ru.dayneko.authorization.model.entity.Role;
 
 import java.util.List;
 

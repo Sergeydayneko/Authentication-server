@@ -2,6 +2,7 @@ package ru.dayneko.authorization.handlers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 final public class HttpRequestAuthenticationFailureHandler implements AuthenticationFailureHandler {
     private final ObjectMapper mapper;
 

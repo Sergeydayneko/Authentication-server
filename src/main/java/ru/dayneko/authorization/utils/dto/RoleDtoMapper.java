@@ -2,7 +2,7 @@ package ru.dayneko.authorization.utils.dto;
 
 import ru.dayneko.authorization.model.dto.RoleDto;
 import ru.dayneko.authorization.model.dto.RoleIdAndNameDto;
-import ru.dayneko.authorization.model.entity.user.Role;
+import ru.dayneko.authorization.model.entity.Role;
 
 /**
  * Мэппер DTO для ролей

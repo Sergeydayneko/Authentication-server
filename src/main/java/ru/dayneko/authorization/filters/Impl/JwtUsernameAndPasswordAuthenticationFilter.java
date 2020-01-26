@@ -32,9 +32,9 @@ final public class JwtUsernameAndPasswordAuthenticationFilter extends Authentica
     private final AuthenticationFailureHandler failureHandler;
     private final TokenExtractor tokenExtractor;
 
-    public JwtUsernameAndPasswordAuthenticationFilter(RequestMatcher pathsToSkip
-                                                    , AuthenticationFailureHandler failureHandler
-                                                    , TokenExtractor tokenExtractor) {
+    JwtUsernameAndPasswordAuthenticationFilter(RequestMatcher pathsToSkip
+            , AuthenticationFailureHandler failureHandler
+            , TokenExtractor tokenExtractor) {
         super(pathsToSkip);
         this.failureHandler = failureHandler;
         this.tokenExtractor = tokenExtractor;

@@ -1,7 +1,13 @@
+liquibase:
+    changelog: classpath:/liquibase/liquibase-changelog.xml
+    defaultSchema: auth
+    liquibaseSchema: auth
+
 logging:
     level: info
     level.org.hibernate.SQL: debug
     level.org.hibernate.type.descriptor.sql: trace
+
 security:
     jwt:
         header: X-Authorization
@@ -10,6 +16,7 @@ security:
         refresh-token-expiration: 2592000
         secret: secret(changeToMacHash)
         uri: /login
+
 server:
     authentication:
         url:
@@ -33,17 +40,20 @@ server:
     tomcat:
         max-connections: 1000
         max-threads: 200
+
 spring:
     application:
         name: auth-proxy-dsp
     datasource:
+        url: jdbc:postgresql://localhost:5432/postgres?currentSchema=users
+        username: postgres
+        password: 11
         hikari:
             maximum-pool-size: 50
             minimum-idle: 5
     jpa:
         properties:
             hibernate:
-                default_schema: auth
                 format_sql: true
                 jdbc:
                     lob:

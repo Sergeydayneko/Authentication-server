@@ -2,6 +2,7 @@ package ru.dayneko.authorization.handlers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.WebAttributes;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 final public class HttpRequestAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     private final ObjectMapper mapper;
     private final TokenFactory tokenFactory;

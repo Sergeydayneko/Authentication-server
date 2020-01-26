@@ -5,7 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import ru.dayneko.authorization.model.dto.RoleDto;
 import ru.dayneko.authorization.model.dto.RoleIdAndNameDto;
-import ru.dayneko.authorization.model.entity.user.Role;
+import ru.dayneko.authorization.model.entity.Role;
 import ru.dayneko.authorization.utils.dto.RoleDtoMapper;
 
 @AllArgsConstructor

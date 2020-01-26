@@ -33,8 +33,8 @@ final public class HttpRequestJwtAuthenticationFilter extends AuthenticationProc
     private final AuthenticationFailureHandler failureHandler;
     private final ObjectMapper objectMapper;
 
-    public HttpRequestJwtAuthenticationFilter(String defaultFilterProcessesUrl, AuthenticationSuccessHandler successHandler,
-                                                 AuthenticationFailureHandler failureHandler, ObjectMapper mapper) {
+    HttpRequestJwtAuthenticationFilter(String defaultFilterProcessesUrl, AuthenticationSuccessHandler successHandler,
+                                       AuthenticationFailureHandler failureHandler, ObjectMapper mapper) {
         super(defaultFilterProcessesUrl);
         this.successHandler = successHandler;
         this.failureHandler = failureHandler;

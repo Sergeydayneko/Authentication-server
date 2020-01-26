@@ -3,7 +3,7 @@ package ru.dayneko.authorization.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.dayneko.authorization.model.entity.user.User;
+import ru.dayneko.authorization.model.entity.User;
 
 import java.util.Optional;
 

@@ -4,7 +4,7 @@ import ru.dayneko.authorization.model.dto.UserDtoDetailed;
 import ru.dayneko.authorization.model.dto.UserDto;
 import ru.dayneko.authorization.model.dto.UserDtoWithRoleNames;
 import ru.dayneko.authorization.model.dto.UserIdAndFioDto;
-import ru.dayneko.authorization.model.entity.user.User;
+import ru.dayneko.authorization.model.entity.User;
 
 /**
  * Мэппуер DTO для пользователей

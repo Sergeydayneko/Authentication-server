@@ -2,7 +2,7 @@ package ru.dayneko.authorization.controllers;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,9 +40,9 @@ import java.util.Map;
  */
 @RequestMapping("/v1")
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Api(tags = "Контроллер для работы с токенами")
-public class TokenController {
+final public class TokenController {
     private final TokenExtractor tokenExtractor;
     private final JwtConfig jwtConfig;
     private final TokenVerifier tokenVerifier;

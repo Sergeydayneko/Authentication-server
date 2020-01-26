@@ -1,7 +1,7 @@
 package ru.dayneko.authorization.filters.Impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -16,7 +16,7 @@ import ru.dayneko.authorization.utils.jwt.TokenExtractor;
 import java.util.Arrays;
 
 
-@Data
+@RequiredArgsConstructor
 @Service
 public class AuthenticationFilterFactoryImpl implements AuthenticationFilterFactory {
     private final AuthenticationSuccessHandler successHandler;
@@ -59,7 +59,7 @@ public class AuthenticationFilterFactoryImpl implements AuthenticationFilterFact
     public AuthenticationProcessingFilter getAuthenticationFilter(AuthenticationFilter filterType) {
         switch (filterType) {
             case HttpRequest:
-                return  new HttpRequestJwtAuthenticationFilter(API_ENTRY_POINT + LOGIN_ENTRY_POINT, successHandler, failureHandler, mapper);
+                return new HttpRequestJwtAuthenticationFilter(API_ENTRY_POINT + LOGIN_ENTRY_POINT, successHandler, failureHandler, mapper);
             case UsernameAndPassword:
                 return new JwtUsernameAndPasswordAuthenticationFilter(new SkipPathsMatcher(Arrays.asList(RAW_ACCESS_TOKEN_ENTRY_POINT, SWAGGER_ENTRY_POINT, REFRESH_TOKEN_ENTRY_POINT, SWAGGER_RESOURCES, API_DOCS, SWAGGER_JARS, SWAGGER_CONTROLLER), BASE_AUTH_URL), failureHandler, tokenExtractor);
             default:

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.dayneko.authorization.repository.RoleRepository;
 import ru.dayneko.authorization.services.RoleService;
-import ru.dayneko.authorization.model.entity.user.Role;
+import ru.dayneko.authorization.model.entity.Role;
 
 import java.util.List;
 
